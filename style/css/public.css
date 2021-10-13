@@ -1,0 +1,5 @@
+/*top begin*/
+.top{width:100%;min-width:1180px;background:#ddd;height:150px;}
+.top .top_con{width:1180px;margin:0 auto;}
+.top .top_con .top_con_left{float:left; width:330px;}
+/*top end*/
