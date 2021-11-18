@@ -53,30 +53,29 @@ html, body {
 }
 
 @media screen and (max-width : 767px) {
-	.background {
+	#bg {
 		background-size:cover;
 	}
-    .background2 {
+    #bg2 {
 		background-size:cover;
 	}
 } 
 @media screen and (max-width : 1000px) {
-	.background {
+	#bg {
 		background-size:130%;
 	}
-    .background2 {
+    #bg2 {
 		background-size:130%;
 	}
 } 
-/* @media screen and (max-width : 2333333px) {
-	.background {
+@media screen and (max-width : 2333333px) {
+	#bg {
 		background-size:130%;
 	}
-    .background2 {
+    #bg2 {
 		background-size:130%;
 	}
-}  */
-
+} 
 
 .profileCard{
     
