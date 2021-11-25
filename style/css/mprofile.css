@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/mbg1.png");
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  top: -20vh;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .logo {
+  position: relative;
+  width: 40vw;
+  height: 40vw;
+}
+.container .logo img {
+  width: 35vw;
+  height: 35vw;
+  margin: 5px 5px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.8);
+  transition: all 1s;
+}
+.container .logo img:hover {
+  transform: rotate(360deg);
+  box-shadow: 0px 0px 50px #ffffff;
+  transition: all 1s;
+}
+.container .name {
+  position: relative;
+  text-align: center;
+  font-size: 10vw;
+  color: #fff;
+  font-weight: 50;
+  /* 下面设置圆形移动效果 */
+}
+.container .name::after {
+  content: 'Home Page of Liws';
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 文字透明色 */
+  color: transparent;
+  background-image: linear-gradient(to right, #c23616, #192a56, #00d2d3, yellow, #6d214f, #2e86de, #4cd137, #e84118);
+  /* 背景绘制区域 当值为text 的时候 代表设置了文字的镂空效果 但是前提必须是文字颜色为透明色 */
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* 利用裁切来创建元素的可显示区域 circle表示创建了圆形 100px表示圆形的直径,0%和50%表示圆形的圆心 圆形的直径和圆形的圆心利用at关键字隔开 */
+  clip-path: circle(20px at 0% 50%);
+  /* 动画  名称 时长 infinite 表示无限次播放 */
+  animation: spotlight 5s infinite;
+}
+@keyframes spotlight {
+  0% {
+    clip-path: circle(20px at 0% 50%);
+  }
+  50% {
+    clip-path: circle(20px at 100% 50%);
+  }
+  100% {
+    clip-path: circle(20px at 0% 50%);
+  }
+}
+.container .intro {
+  position: relative;
+  width: 90vw;
+  height: 10vw;
+  background-image: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
+  background-size: 400%;
+  border-radius: 5vw;
+  border: 1vw solid rgba(255, 255, 255, 0.8);
+  text-shadow: 0px 0px 1vw #fff;
+  box-shadow: 0px 0px 1vw #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .intro:hover {
+  animation: liuguang 8s infinite;
+}
+@keyframes liuguang {
+  100% {
+    background-position: -400% 0;
+  }
+}
+.container .intro div {
+  text-align: center;
+  color: #ffffff;
+  font-size: 4vw;
+}
+.container .buttons {
+  width: 90vw;
+  height: 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .button {
+  width: 28vw;
+  height: 10vw;
+  border: 1vw solid rgba(255, 255, 255, 0.4);
+  border-radius: 5vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 3vw;
+  transition: all 0.5s;
+}
+.container .button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  box-shadow: 0px 0px 12px #fff;
+  transition: all 0.5s;
+}
+.lihui {
+  position: fixed;
+  max-width: 80vw;
+  max-height: 80vh;
+  left: -20vw;
+  bottom: 0;
+  background-size: cover;
+  transition: all 1s;
+}
+.lihui:hover {
+  left: 20vw;
+}

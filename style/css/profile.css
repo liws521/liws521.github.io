@@ -1,200 +1,179 @@
-html, body {
-    font-family: 'Quicksand', sans-serif;
-    margin:0;
-    padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-#card {
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    
-    position: absolute;
-    z-index: 0;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
-
-#bg {
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background-image: url("../img/bg.jpg");
-    position: absolute;
-    z-index: -5;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg1.jpg");
+  background-size: 105% 105%;
+  z-index: -5;
 }
-
-#bg2 {
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background-image: url("../img/bbbggg.jpg");
-    position: absolute;
-    z-index: -4;
+.bg2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 105% 105%;
+  background-image: url("../img/bg01.jpg");
+  z-index: -4;
 }
-
 .yinghua {
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background-image: url("../img/yinghua.png");
-    position: absolute;
-    z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-image: url("../img/yinghua.png");
+  z-index: -1;
 }
-
-@media screen and (max-width : 767px) {
-	#bg {
-		background-size:cover;
-	}
-    #bg2 {
-		background-size:cover;
-	}
-} 
-@media screen and (max-width : 1000px) {
-	#bg {
-		background-size:130%;
-	}
-    #bg2 {
-		background-size:130%;
-	}
-} 
-@media screen and (max-width : 2333333px) {
-	#bg {
-		background-size:130%;
-	}
-    #bg2 {
-		background-size:130%;
-	}
-} 
-
-.profileCard{
-    
-    
-    z-index: 0;
-
+/* 作为一个容器, 铺满整页 */
+/* 一个常规的布局是背景设置在body的背景, 然后把body当作一个容器, 在里面排布子元素 */
+/* 由于profile对bg有了特殊的设计, 所以有了bg, bg2, 单独弄一个container当作容器 */
+.container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-#logo {
-
-    margin: auto;
-    margin-top: -100px;
-    width: 200px;
-    height: 200px;
-    /*background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px #ffffff;
-    */
+/* container是全屏, 里面只有这一个元素, container中flex布局的目的就是让card居中 */
+.card {
+  position: relative;
+  top: -100px;
+  z-index: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#logo img {
-    width: 180px;
-    height: 180px;
-    margin: 5px 5px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);
-    transition: all 1s;
-    /*box-shadow: 0px 0px 10px #ffffff;*/
+.logo {
+  width: 200px;
+  height: 200px;
 }
-
-#logo img:hover{
-    transform: rotate(360deg);
-    box-shadow: 0px 0px 50px rgba(255, 255, 255, 1);
-
-    transition: all 1s;
-    /*box-shadow: 0px 0px 10px #ffffff;*/
+.logo img {
+  width: 180px;
+  height: 180px;
+  margin: 5px 5px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.8);
+  transition: all 1s;
 }
-
-.name{
-    margin-top: 5px;
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    font-weight: 500;
-    text-shadow: 0px 0px 12px white;
-    transition: all 0.5s;
+.logo img:hover {
+  transform: rotate(360deg);
+  box-shadow: 0px 0px 50px #ffffff;
 }
-.name:hover{
-    text-shadow: 0px 0px 30px white;
-
-    transition: all 0.5s;
+.name {
+  position: relative;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 1000;
+  text-shadow: 0px 0px 24px white;
+  transition: all 0.5s;
+  /* 下面设置圆形移动效果 */
 }
-
-#introDiv {
-    margin: auto;
-    width: 600px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    text-shadow: 0px 0px 12px #ffffff;
-    box-shadow: 0px 0px 12px #ffffff;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
+.name:hover {
+  text-shadow: 0px 0px 50px white;
+  transition: all 0.5s;
 }
-#introDiv:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0px 0px 25px #ffffff;
-    transition: all 0.5s;
+.name::after {
+  content: 'Home Page of Liws';
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 文字透明色 */
+  color: transparent;
+  background-image: linear-gradient(to right, #c23616, #192a56, #00d2d3, yellow, #6d214f, #2e86de, #4cd137, #e84118);
+  /* 背景绘制区域 当值为text 的时候 代表设置了文字的镂空效果 但是前提必须是文字颜色为透明色 */
+  background-clip: text;
+  /* 谷歌浏览器的私有属性 */
+  -webkit-background-clip: text;
+  /* 利用裁切来创建元素的可显示区域 circle表示创建了圆形 100px表示圆形的直径,0%和50%表示圆形的圆心 圆形的直径和圆形的圆心利用at关键字隔开 */
+  clip-path: circle(20px at 0% 50%);
+  /* 动画  名称 时长 infinite 表示无限次播放 */
+  animation: spotlight 5s infinite;
 }
-
-#introText {
-    text-align: center;
-    color: rgba(255, 255, 255, 1);
-    font-size: 16px;
-    max-width: 500px;
+@keyframes spotlight {
+  0% {
+    clip-path: circle(20px at 0% 50%);
+  }
+  50% {
+    clip-path: circle(20px at 100% 50%);
+  }
+  100% {
+    clip-path: circle(20px at 0% 50%);
+  }
 }
-
-.buttons{
-    margin-top: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 500px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 为了实现文本的垂直居中, 里面套个文本盒子 */
+.intro {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 50px;
+  background-image: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
+  background-size: 400%;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  text-shadow: 0px 0px 12px #fff;
+  box-shadow: 0px 0px 12px #fff;
+  transition: all 0.5s;
 }
-.button1{
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 50px;
-    width: 200px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 16px;
-    transition: all 0.5s;
+.intro:hover {
+  /* 动画 名称 时间 infinite 是无限次播放 */
+  animation: liuguang 8s infinite;
 }
-.button1:hover{
-    background-color: rgba(255, 255, 255, 0.4);
-    
-    color: #ffffff;
-    box-shadow: 0px 0px 12px #ffffff;
-    transition: all 0.5s;
-
+@keyframes liuguang {
+  100% {
+    /* 背景位置 */
+    background-position: -400% 0;
+  }
 }
-
-/* 一张立绘是1024*1024px的, 大小设置为700*700 靠左下摆放 fixed*/
-.lihui{
-    position: fixed;
-    /* background-image: url("img/lihui.texb"); */
-    width: 700px;
-    height: 700px;
-    left: -100px;
-    bottom: 0;
-    background-size: cover;
-    z-index: -2;
+.intro div {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  max-width: 500px;
+}
+.buttons {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.button {
+  width: 150px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  transition: all 0.5s;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  box-shadow: 0px 0px 12px #fff;
+  transition: all 0.5s;
+}
+/* 一张立绘是1024*1024px的, 大小设置为700*700 靠左下摆放fixed */
+.lihui {
+  position: fixed;
+  max-width: 700px;
+  max-height: 700px;
+  left: -100px;
+  bottom: 0;
+  background-size: cover;
+  z-index: -2;
 }

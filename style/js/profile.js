@@ -20,30 +20,13 @@ document.addEventListener('mousemove',
         window.requestAnimationFrame(function () {
             var xValue = calcValue(ev.clientX, window.innerWidth);
             var yValue = calcValue(ev.clientY, window.innerHeight);
-            bg.style.backgroundPositionX = xValue * 1 - 200 + "px ";
+            bg.style.backgroundPositionX = xValue * 1 - 50 + "px ";
             bg.style.backgroundPositionY = (-yValue * 0.75 - 50) + "px";
-            bg2.style.backgroundPositionX = xValue * 1 - 200 + "px ";
+            bg2.style.backgroundPositionX = xValue * 1 - 50 + "px ";
             bg2.style.backgroundPositionY = (-yValue * 0.75 - 50) + "px";
             bg2.style.opacity = 1 - (ev.clientY / window.innerHeight * 2);
-            lihui.style.left = xValue * 0.7 - 100 + "px";
-            yinghua.style.backgroundPositionX = xValue * 1.5 - 200 + "px ";
+            lihui.style.left = xValue * 5 - 100 + "px";
+            yinghua.style.backgroundPositionX = xValue * 1.5 - 50 + "px ";
             yinghua.style.backgroundPositionY = (-yValue * 1 - 50) + "px";
         })
     }, false);
-
-// 两种切换, 这里很好改, 可以改成几种仓库轮流更新
-var introFlag = 0;
-function introduce() {
-    var introDiv = document.getElementById("introDiv");
-    var introText = document.getElementById("introText");
-    if (introFlag == 0) {
-        introFlag = 1;
-        introDiv.style.height = "100px";
-        introText.innerHTML = "本Repo主旨 -- 花里胡哨 </br> 致力于收集一切可以令Web端更美观的小组件";
-    } else {
-        introFlag = 0;
-        introDiv.style.height = "50px";
-        introText.innerHTML = "攀一座山, 看一场雪, 追一个梦~";
-    }
-
-}

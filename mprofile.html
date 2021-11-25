@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- profile的移动端页面 -->
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Home Page of Liws</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="style/css/mprofile.css">
+    <script>
+        if (document.body.offsetWidth < document.body.offsetHeight) {
+            window.location.href = "./mprofile.html";
+        } else {
+            window.location.href = "./index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <img src="https://card.niconi.co.ni/asset/assets/image/unit/32008001/tx_u_32008001_rankup_navi.texb" class="lihui" />
+
+    <div class="container">
+        <div class="logo">
+            <img src="https://card.niconi.co.ni/asset/assets/image/unit/32008001/u_32008001_rankup_icon.png" />
+        </div>
+        <div class="name">Home Page of Liws</div>
+        <div id="intro" class="intro">
+            <div id="introText">攀一座山, 看一场雪, 追一个梦~</div>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="introduce()">Introduce</button>
+            <button class="button" onclick="window.open('../toc/index.html', '_self')">Repo Page</button>
+            <button class="button" onclick="window.open('')">Home Page</button>
+        </div>
+    </div>
+
+    <script src="style/js/mobile.js"></script>
+    <script src="style/js/intro.js"></script>
+</body>
+
+</html>

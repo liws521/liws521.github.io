@@ -1,49 +1,50 @@
 <!DOCTYPE html>
-<html lang="zh-ch">
-<!-- - Meta, 简介页 Profile
-- bg: 一张图片bg以及它的模糊版bg2, 樱花, 立绘
-- fg: logo + name + intro + buttons -->
+<html lang="zh-CN">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Liws</title>
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta charset="UTF-8" />
+    <title>Home Page of Liws</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style/css/profile.css">
-    <!-- <link rel="shortcut icon" href="img/logo.png" type="image/x-icon"> -->
+    <script>
+        if (
+            navigator.userAgent.match(
+                /(phone|pod|iPhone|iPod|ios|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+            )
+        ) {
+            window.location.href = "./mprofile.html";
+        }
+    </script>
 </head>
 
 <body>
 
     <!-- 背景图片和立绘 -->
-    <div id="bg"></div>
-    <div id="bg2"></div>
-    <div class="yinghua" id="yinghua"></div>
-    <img src="style/img/62.texb" class="lihui" id="lihui" alt="">
+    <div id="bg" class="bg"></div>
+    <div id="bg2" class="bg2"></div>
+    <div id="yinghua" class="yinghua"></div>
+    <img src="https://card.niconi.co.ni/asset/assets/image/unit/32008001/tx_u_32008001_rankup_navi.texb" id="lihui" class="lihui" />
 
-    <div id="card">
-        <div class="proflieCard">
-            <!-- logo -->
-            <div id="logo">
-                <img src="style/img/62.png" />
+    <div class="container">
+        <div class="card">
+            <div class="logo">
+                <img src="https://card.niconi.co.ni/asset/assets/image/unit/32008001/u_32008001_rankup_icon.png" />
             </div>
-            <!-- 项目名称 -->
-            <p class="name">Home Page of Liws</p>
-            <!-- 项目简介 -->
-            <div id="introDiv">
-                <p id="introText">去攀一座山, 看一场雪, 追一个梦~</p>
+            <div class="name">Home Page of Liws</div>
+            <div id="intro" class="intro">
+                <div id="introText">攀一座山, 看一场雪, 追一个梦~</div>
             </div>
-            <!-- buttons -->
             <div class="buttons">
-                <button class="button1" onclick="introduce()">Introduce</button>
-                <button class="button1" onclick="window.open('')">Repo Page</button>
-                <button class="button1" onclick="window.open('')">Home Page</button>
+                <button class="button" onclick="introduce()">Introduce</button>
+                <button class="button" onclick="window.open('../toc/index.html')">Repo Page</button>
+                <button class="button" onclick="window.open('#')">Home Page</button>
             </div>
 
         </div>
     </div>
 
     <script src="style/js/profile.js"></script>
+    <script src="style/js/intro.js"></script>
 </body>
 
 </html>
